@@ -7,199 +7,265 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
         
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #F8F9F5;
+            background-color: #FCFDFB;
         }
 
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
 
-        .bg-soft-sage { background-color: #E2E8DD; }
-        .text-sage { color: #5D6D55; }
-        .border-sage { border-color: #A3B18A; }
+        /* Couleurs plus contrastées */
+        .text-dark-sage { color: #2D3A28; }
+        .bg-sage-strong { background-color: #5D6D55; }
+        .bg-cream { background-color: #F2F1E9; }
 
         .reveal {
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.8s ease-out;
+            transition: all 0.6s ease-out;
         }
 
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body class="text-slate-700">
+<body class="text-slate-900">
 
     <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+    <nav class="fixed w-full z-50 bg-white border-b border-slate-200 py-3 px-6 shadow-sm">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex flex-col">
-                <span class="text-lg font-bold tracking-tight text-sage">Florence Lachaussée</span>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Sophrologue Relaxologue</span>
+                <span class="text-xl font-bold tracking-tight text-dark-sage">Florence Lachaussée</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-800 font-extrabold">Sophrologue Relaxologue Certifiée</span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#accueil" class="hover:text-sage transition-colors">Accueil</a>
-                <a href="#domaines" class="hover:text-sage transition-colors">Domaines</a>
-                <a href="#contact" class="bg-sage text-white px-5 py-2 rounded-full hover:bg-slate-700 transition-all">Prendre RDV</a>
+            <div class="hidden md:flex gap-8 text-sm font-bold">
+                <a href="#accueil" class="hover:text-emerald-700 transition-colors">Accueil</a>
+                <a href="#methode" class="hover:text-emerald-700 transition-colors">Méthode</a>
+                <a href="#domaines" class="hover:text-emerald-700 transition-colors">Champs d'application</a>
+                <a href="#contact" class="bg-emerald-800 text-white px-6 py-2 rounded-full hover:bg-emerald-900 transition-all shadow-md">Contact & RDV</a>
             </div>
-            <div class="md:hidden text-sage">
+            <div class="md:hidden text-emerald-800">
                 <i data-lucide="menu"></i>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header id="accueil" class="pt-32 pb-20 px-6">
+    <header id="accueil" class="pt-32 pb-16 px-6 bg-cream">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="reveal">
-                <div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full text-xs font-bold text-sage border border-slate-100 mb-6 shadow-sm">
-                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                <div class="inline-flex items-center gap-2 bg-emerald-800 text-white px-4 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm">
+                    <i data-lucide="video" class="w-3 h-3"></i>
                     Cabinet & Visio (Skype, Zoom, WhatsApp)
                 </div>
-                <h1 class="text-4xl md:text-6xl font-serif text-slate-800 mb-6 leading-tight">
-                    Retrouvez votre <span class="italic text-sage">équilibre</span> intérieur.
+                <h1 class="text-4xl md:text-6xl font-serif text-slate-900 mb-6 leading-tight">
+                    Découvrez la <span class="italic text-emerald-800">vivance</span> par la sophrologie.
                 </h1>
-                <p class="text-lg text-slate-500 mb-10 leading-relaxed font-light">
+                <p class="text-lg text-slate-700 mb-8 leading-relaxed">
                     "Une méthode, une science, une philosophie, pour acquérir un savoir-faire et un savoir-être par ses propres moyens."
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="px-8 py-4 bg-sage text-white rounded-2xl font-bold shadow-lg shadow-sage/20 hover:scale-105 transition-all">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-emerald-800 text-white text-center rounded-xl font-bold shadow-lg hover:bg-emerald-900 transition-all">
                         Prendre rendez-vous
                     </a>
-                    <div class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl border border-slate-100">
-                        <i data-lucide="phone" class="w-5 h-5 text-sage"></i>
-                        <span class="font-bold">06 08 62 53 92</span>
+                    <div class="flex items-center justify-center gap-3 px-6 py-4 bg-white rounded-xl border-2 border-emerald-100 shadow-sm">
+                        <i data-lucide="phone" class="w-5 h-5 text-emerald-800"></i>
+                        <span class="font-bold text-slate-900">06 08 62 53 92</span>
                     </div>
                 </div>
             </div>
             <div class="relative reveal delay-200">
-                <div class="aspect-square bg-soft-sage rounded-[3rem] overflow-hidden rotate-3 relative shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" 
-                         alt="Sophrologie Relaxation" 
-                         class="w-full h-full object-cover -rotate-3 scale-110">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" 
+                     alt="Séance de relaxation" 
+                     class="w-full h-[400px] object-cover rounded-[2rem] shadow-2xl">
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Certification</p>
+                    <p class="text-sm font-black text-emerald-800 uppercase">Enregistrée RNCP <br>Arrêté du 27/11/2012</p>
                 </div>
-                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl hidden sm:block">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center text-sage font-bold">RNCP</div>
-                        <p class="text-[10px] leading-tight text-slate-400 font-bold uppercase tracking-wider">Certifiée au Répertoire<br>National Professionnel</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- LA SOPHROLOGIE & VIVANCE -->
+    <section id="methode" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-sm font-black text-emerald-800 uppercase tracking-[0.3em] mb-4">La Vivance</h2>
+            <h3 class="text-3xl md:text-4xl font-serif italic mb-8">Ressentir pour mieux-être</h3>
+            <p class="text-lg text-slate-700 leading-relaxed mb-10">
+                Même si une explication ou des vidéos vous informent, elles ne remplacent pas la pratique. C'est ce que les sophrologues nomment la <strong>"vivance"</strong> : elle seule vous permet de ressentir les bienfaits profonds de la méthode.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-800">
+                    <h4 class="font-bold mb-2">Pour qui ?</h4>
+                    <p class="text-sm text-slate-600">Enfants, adolescents, adultes. Séances individuelles au cabinet ou à domicile (Rambouillet et alentours).</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-800">
+                    <h4 class="font-bold mb-2">Engagements</h4>
+                    <p class="text-sm text-slate-600 italic">"Je ne diagnostique pas, ne préconise pas de médicaments et ne manipule pas. Les préconisations de votre médecin restent la priorité."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAMPS D'APPLICATION (GRILLE COMPLETE) -->
+    <section id="domaines" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-black text-emerald-800 uppercase tracking-[0.3em] mb-4">Applications</h2>
+                <h3 class="text-3xl md:text-4xl font-serif italic">Un accompagnement pour chaque étape</h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Les cartes utilisent des couleurs de texte sombres sur fonds clairs -->
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Confiance en soi</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Développer l'estime, l'image de soi et la capacité à s'affirmer au quotidien.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="moon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Troubles du sommeil</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Calmer les pensées parasites le soir pour un endormissement rapide et réparateur.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Maternité & Parentalité</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Préparation à l'accouchement serein et soutien au maternage de proximité (La Leche League).</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Enfants & Ados</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Canaliser l'énergie, gérer le stress scolaire et retrouver la motivation.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="alert-circle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Anxiété & Burn-out</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Apaiser les angoisses et prévenir le syndrome d'épuisement professionnel.</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-3xl card-shadow border border-slate-100 reveal">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-800 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900">Sport & Concours</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Préparation mentale aux compétitions et examens pour améliorer vos performances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COHERENCE CARDIAQUE -->
+    <section class="py-24 px-6 bg-emerald-900 text-white overflow-hidden relative">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="reveal">
+                <h2 class="text-emerald-400 font-black uppercase tracking-widest text-sm mb-4">Focus Technique</h2>
+                <h3 class="text-4xl font-serif italic mb-6">La Cohérence Cardiaque</h3>
+                <p class="text-emerald-100 mb-8 leading-relaxed">
+                    Formée et certifiée par le <strong>Docteur David O'Hare</strong>, je vous enseigne cette technique de respiration qui permet de réguler votre système nerveux en quelques minutes.
+                </p>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+                    <h4 class="font-bold text-amber-400 text-xl mb-4">La règle du 3.6.5</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <span>Pratiquer <strong>3 fois par jour</strong></span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold shrink-0">6</span>
+                            <span><strong>6 respirations</strong> par minute</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold shrink-0">5</span>
+                            <span>Pendant <strong>5 minutes</strong></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="reveal delay-200">
+                <div class="bg-white p-8 rounded-[2.5rem] text-slate-900">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i data-lucide="video" class="text-emerald-800"></i>
+                        <h4 class="font-bold">Applications & Médias</h4>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-6 italic">
+                        "La cohérence cardiaque est utilisée par les pilotes de l'armée de l'Air et les sportifs de haut niveau comme Yannick Noah."
+                    </p>
+                    <div class="space-y-3">
+                        <a href="https://www.youtube.com" target="_blank" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all">
+                            <span class="text-sm font-bold">Vidéo : Les pilotes de l'Air (E=M6)</span>
+                            <i data-lucide="external-link" class="w-4 h-4 text-emerald-800"></i>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all">
+                            <span class="text-sm font-bold">L'application recommandée : PlongeZen</span>
+                            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-800"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- CHAMPS D'APPLICATION -->
-    <section id="domaines" class="py-24 bg-white px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-black text-sage uppercase tracking-[0.3em] mb-4">Champs d'application</h2>
-                <h3 class="text-3xl md:text-4xl font-serif italic text-slate-800">Comment la sophrologie peut vous aider ?</h3>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                        <i data-lucide="moon"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Troubles du sommeil</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Apprendre à calmer ses pensées le soir pour un endormissement serein.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-100">
-                    <div class="w-12 h-12 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
-                        <i data-lucide="smile"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Confiance en soi</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Développer l'estime de soi et améliorer son image personnelle au quotidien.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-200">
-                    <div class="w-12 h-12 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all">
-                        <i data-lucide="baby"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Maternité</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Accompagnement à la grossesse pour un accouchement calme et positif.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all">
-                        <i data-lucide="shield-check"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Burn-out</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Prévenir l'épuisement professionnel et retrouver l'énergie pour en sortir.</p>
-                </div>
-                <!-- Card 5 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-100">
-                    <div class="w-12 h-12 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
-                        <i data-lucide="brain"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Concentration</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Améliorer l'attention pour les études, le sport ou les examens/concours.</p>
-                </div>
-                <!-- Card 6 -->
-                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-200">
-                    <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all">
-                        <i data-lucide="heart"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Cohérence Cardiaque</h4>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Technique de respiration certifiée pour réduire le stress instantanément.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & INFOS -->
+    <!-- CONTACT -->
     <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="bg-sage rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl">
-            <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-serif italic mb-8">Où me trouver ?</h2>
-                    <div class="space-y-8">
-                        <div class="flex gap-6">
-                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl mb-1">Cabinet Rambouillet</h4>
-                                <p class="text-emerald-50/80">9 bis rue du docteur Bergonier<br>78120 Rambouillet</p>
-                            </div>
+        <div class="grid md:grid-cols-2 gap-16">
+            <div class="reveal">
+                <h2 class="text-3xl font-serif italic mb-8">Informations de contact</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-emerald-50 text-emerald-800 rounded-2xl flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin"></i>
                         </div>
-                        <div class="flex gap-6">
-                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                                <i data-lucide="video"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xl mb-1">Séances en Visio</h4>
-                                <p class="text-emerald-50/80">Skype, Zoom ou WhatsApp<br>Partout en France</p>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">Cabinet Rambouillet</h4>
+                            <p class="text-slate-600">9 bis rue du docteur Bergonier<br>78120 Rambouillet</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-emerald-50 text-emerald-800 rounded-2xl flex items-center justify-center shrink-0">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">Email</h4>
+                            <p class="text-slate-600">florence.lachaussee@free.fr</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-8 md:p-12 rounded-[2.5rem] text-slate-800">
-                    <h3 class="text-2xl font-serif italic mb-6">Contact direct</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 border-b border-slate-100 pb-4">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-sage">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
-                            </div>
-                            <span class="font-bold">06 08 62 53 92</span>
-                        </div>
-                        <div class="flex items-center gap-4 border-b border-slate-100 pb-4">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-sage">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-sm font-medium break-all">florence.lachaussee@free.fr</span>
-                        </div>
-                    </div>
-                    <button class="w-full mt-10 py-5 bg-sage text-white font-bold rounded-2xl shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
-                        Envoyer un message <i data-lucide="send" class="w-4 h-4"></i>
+            </div>
+            
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border border-slate-100 reveal delay-200">
+                <h3 class="text-2xl font-serif italic mb-6">Prendre rendez-vous</h3>
+                <p class="text-sm text-slate-500 mb-8">N'hésitez pas à me contacter par téléphone pour toute interrogation, je vous répondrai avec plaisir.</p>
+                <div class="space-y-4">
+                    <a href="tel:0608625392" class="flex items-center justify-center gap-3 w-full py-4 bg-emerald-800 text-white rounded-xl font-bold hover:bg-emerald-900 transition-all shadow-lg">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        Appeler le 06 08 62 53 92
+                    </a>
+                    <button class="w-full py-4 bg-white border-2 border-emerald-800 text-emerald-800 rounded-xl font-bold hover:bg-emerald-50 transition-all">
+                        Envoyer un email
                     </button>
                 </div>
             </div>
@@ -207,14 +273,30 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-slate-100 bg-white px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <p class="font-serif italic text-xl text-sage">Florence Lachaussée</p>
-                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">Sophrologue Rambouillet — Design PoC</p>
+    <footer class="py-12 bg-white border-t border-slate-200 px-6">
+        <div class="max-w-6xl mx-auto text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <div>
+                    <p class="text-xl font-serif italic text-emerald-900">Florence Lachaussée</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mt-2">Sophrologue Enregistrée RNCP • 78120 Rambouillet</p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="text-slate-400 hover:text-emerald-800"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-emerald-800"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div class="max-w-xs">
+                    <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-900 mb-4 text-left">Mentions & Partenariats</h5>
+                    <ul class="text-[11px] text-slate-500 space-y-2 text-left">
+                        <li>Membre de Sofrocay</li>
+                        <li>Chambre syndicale de la sophrologie</li>
+                        <li>Animatrice La Leche League (Allaitement)</li>
+                        <li>Intervenante Espace Kangourou</li>
+                    </ul>
+                </div>
             </div>
-            <div class="text-[11px] text-slate-300 uppercase tracking-widest font-bold">
-                Certifiée RNCP 2012 • 2024
+            <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-slate-300 uppercase tracking-widest font-bold">© 2014-2024 Sophrologue Professionnel - Tous droits réservés.</p>
+                <p class="text-[9px] text-slate-400 italic">Ce site utilise des cookies de performance et de sécurité.</p>
             </div>
         </div>
     </footer>
@@ -222,7 +304,7 @@
     <script>
         lucide.createIcons();
 
-        // Reveal effect on scroll
+        // Reveal animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -232,6 +314,11 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu simple logic (simulé)
+        document.querySelector('.md\\:hidden').addEventListener('click', () => {
+            alert("Menu mobile : Accueil / Domaines / Contact");
+        });
     </script>
 </body>
 </html>
