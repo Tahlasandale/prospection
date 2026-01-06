@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Rambouillet | Danse & Bien-être</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --studio-dark: #1a1a1a;
+            --studio-gold: #c5a358;
+            --studio-bg: #faf9f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--studio-bg);
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .glass-nav {
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-zoom {
+            animation: zoom 20s infinite alternate;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 md:py-6 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 border border-current flex items-center justify-center text-[10px] tracking-widest font-bold">SR</div>
+                <span id="nav-logo" class="text-xs md:text-sm font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-white transition-colors">Studio Rambouillet</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 lg:gap-10 text-[10px] font-bold uppercase tracking-[0.2em]" id="nav-links">
+                <a href="#presentation" class="text-white hover:text-[#c5a358] transition-colors">Présentation</a>
+                <a href="#espace" class="text-white hover:text-[#c5a358] transition-colors">L'Espace</a>
+                <a href="#planning" class="text-white hover:text-[#c5a358] transition-colors">Planning</a>
+                <a href="https://www.helloasso.com" target="_blank" class="bg-white text-black px-6 py-3 rounded-sm hover:bg-slate-200 transition-all">S'inscrire</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white transition-colors" id="mobile-btn">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="fixed inset-0 z-[45] bg-[#faf9f6] translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 md:hidden">
+        <a href="#presentation" class="text-2xl font-serif italic text-slate-800">Présentation</a>
+        <a href="#espace" class="text-2xl font-serif italic text-slate-800">L'Espace</a>
+        <a href="#planning" class="text-2xl font-serif italic text-slate-800">Planning</a>
+        <a href="https://www.helloasso.com" target="_blank" class="mt-4 px-10 py-4 bg-[#c5a358] text-white text-xs font-bold uppercase tracking-widest">S'inscrire</a>
+    </div>
+
+    <!-- HERO -->
+    <header class="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://s2.qwant.com/thumbr/474x338/e/a/47e368d52db56c6333c088afaf598476e3eb151a85f891bf2976a686f96d29/OIP.aibYMkSKAhS5xZvmst0G3gHaFS.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.aibYMkSKAhS5xZvmst0G3gHaFS%3Fpid%3DApi&q=0&b=1&p=0&a=0" 
+                 alt="Dance Studio" 
+                 class="w-full h-full object-cover hero-zoom brightness-[0.45]">
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl">
+            <span class="text-white/70 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] mb-4 md:mb-6 block">École de Danse & Bien-être</span>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-serif italic text-white mb-8 md:mb-10 leading-tight">
+                L'art de la danse <br class="hidden md:block">au cœur de Rambouillet.
+            </h1>
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+                <a href="#planning" class="w-full sm:w-auto px-10 py-4 bg-[#c5a358] hover:bg-[#b08e45] text-white text-[10px] md:text-[11px] font-bold uppercase tracking-widest transition-all shadow-2xl">
+                    S'inscrire aux cours d'essais
+                </a>
+                <a href="#espace" class="text-white text-[10px] md:text-[11px] font-bold uppercase tracking-widest border-b border-white/30 hover:border-white transition-all pb-1">
+                    Découvrir le lieu de résidence
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-4 text-white/40">
+            <span class="text-[8px] md:text-[9px] uppercase tracking-[0.3em]">Défiler</span>
+            <div class="w-px h-8 md:h-12 bg-white/20"></div>
+        </div>
+    </header>
+
+    <!-- ANNONCE (MARQUEE) -->
+    <section class="py-10 md:py-12 bg-black text-white overflow-hidden">
+        <div class="animate-marquee flex items-center">
+            <!-- Double contenu pour boucle infinie -->
+            <div class="flex gap-10 md:gap-20 items-center pr-10 md:pr-20">
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Reprise le Lundi 15 Septembre</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Forum des associations le 13 Septembre</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Cours d'essais offerts</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+            </div>
+            <div class="flex gap-10 md:gap-20 items-center pr-10 md:pr-20">
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Reprise le Lundi 15 Septembre</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Forum des associations le 13 Septembre</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+                <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Cours d'essais offerts</span>
+                <span class="w-1.5 h-1.5 bg-[#c5a358] rounded-full"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTATION -->
+    <section id="presentation" class="py-20 md:py-32 px-4 md:px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+            <div class="reveal">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c5a358] mb-4 md:mb-6">Le Studio</h2>
+                <h3 class="text-3xl md:text-5xl font-serif italic mb-6 md:mb-8 leading-tight">Un espace dédié à la création pour amateurs et pros.</h3>
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed mb-8 font-light">
+                    Situé au sein du Smart City Campus, à quelques minutes de la gare de Rambouillet, le Studio propose une approche pluridisciplinaire de la danse et du bien-être.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div>
+                        <div class="text-xl md:text-2xl font-serif italic mb-2">Danse</div>
+                        <p class="text-[11px] text-slate-400 leading-relaxed uppercase tracking-widest">Classique, Jazz, Street Girly, Danse Orientale.</p>
+                    </div>
+                    <div>
+                        <div class="text-xl md:text-2xl font-serif italic mb-2">Bien-être</div>
+                        <p class="text-[11px] text-slate-400 leading-relaxed uppercase tracking-widest">Yoga, Biodanza, Relaxation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative reveal mt-8 md:mt-0">
+                <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=800" alt="Danseuse" class="rounded-sm shadow-2xl w-full h-auto">
+                <div class="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 bg-white p-6 md:p-10 shadow-xl">
+                    <p class="text-3xl md:text-4xl font-serif italic">30 min</p>
+                    <p class="text-[9px] md:text-[10px] uppercase font-bold tracking-widest text-slate-400">De Paris Montparnasse</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'ESPACE -->
+    <section id="espace" class="py-20 md:py-32 bg-white px-4 md:px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-20 reveal">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c5a358] mb-4 md:mb-6">Le Lieu de Résidence</h2>
+                <h3 class="text-3xl md:text-4xl font-serif italic">Des équipements d'excellence.</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-100 border border-slate-100">
+                <div class="bg-white p-8 md:p-12 reveal">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mb-6 md:mb-8 flex items-center justify-center text-[#c5a358]">
+                        <i data-lucide="maximize" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-serif italic mb-4">400 m² d'espace</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">
+                        Une salle monumentale sous une immense verrière avec vue sur les arbres pour une immersion totale et une lumière naturelle.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 reveal">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mb-6 md:mb-8 flex items-center justify-center text-[#c5a358]">
+                        <i data-lucide="layers" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-serif italic mb-4">Parquet Harlequin</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">
+                        Tapis de scène et parquet entièrement neufs de la marque Harlequin, la référence mondiale pour la sécurité des danseurs.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 reveal">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mb-6 md:mb-8 flex items-center justify-center text-[#c5a358]">
+                        <i data-lucide="coffee" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-serif italic mb-4">Espace Détente</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">
+                        Cuisine, vestiaires et salle d'attente à disposition pour votre confort avant et après chaque session.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANNING / INSCRIPTION -->
+    <section id="planning" class="py-20 md:py-32 px-4 md:px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-6xl font-serif italic mb-8 md:mb-10">Prêt à nous rejoindre ?</h2>
+            <p class="text-base md:text-lg text-slate-500 mb-10 md:mb-12 font-light">
+                Les inscriptions aux cours d'essais sont ouvertes. Tous les cours sont offerts la première semaine pour découvrir nos disciplines.
+            </p>
+            <div class="bg-white p-8 md:p-10 shadow-sm border border-slate-100 rounded-sm mb-12">
+                <h4 class="text-[10px] font-bold uppercase tracking-widest mb-6">Inscription via HelloAsso</h4>
+                <a href="https://www.helloasso.com" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-10 md:px-12 py-5 bg-black text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-800 transition-all">
+                    S'inscrire en ligne <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+                <p class="mt-8 text-[10px] text-slate-400 leading-relaxed italic max-w-md mx-auto">
+                    Note : Pour le Yoga, la Biodanza, le Street Girly et la Danse Orientale, merci de contacter directement les professeurs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer class="py-16 md:py-24 px-4 md:px-6 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-6 md:mb-8">
+                    <div class="w-8 h-8 border border-slate-400 flex items-center justify-center text-[10px] font-bold">SR</div>
+                    <span class="text-xs font-bold tracking-[0.3em] uppercase">Studio Rambouillet</span>
+                </div>
+                <p class="text-xs md:text-sm text-slate-400 leading-relaxed font-light">
+                    Smart City Campus<br>
+                    01 Rue de Clairefontaine<br>
+                    78120 Rambouillet
+                </p>
+            </div>
+            <div class="text-center">
+                <h5 class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-6 md:mb-8">Contact Directrice</h5>
+                <p class="text-xl md:text-2xl font-serif italic mb-2">Cathy Berthelot</p>
+                <p class="text-sm text-slate-500 mb-4">06 62 07 37 26</p>
+                <a href="mailto:berthelot.cathy3@hotmail.com" class="text-xs md:text-sm border-b border-slate-200 pb-1 hover:border-black transition-all">berthelot.cathy3@hotmail.com</a>
+            </div>
+            <div class="flex flex-col items-center md:items-end">
+                <h5 class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-6 md:mb-8">Nous suivre</h5>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 md:mt-24 pt-8 border-t border-slate-50 text-center">
+            <p class="text-[8px] md:text-[9px] text-slate-300 uppercase tracking-widest font-bold">© 2024 Studio Rambouillet — Design PoC par Joseph Humbert</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialisation des icônes
+        lucide.createIcons();
+
+        // Gestion du menu mobile
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        });
+
+        // Fermer le menu au clic sur un lien
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+                isMenuOpen = false;
+                lucide.createIcons();
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.getElementById('nav-links');
+        const navLogo = document.getElementById('nav-logo');
+        const btnIcon = document.getElementById('mobile-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('glass-nav', 'py-4');
+                navbar.classList.remove('py-6');
+                navLinks?.classList.remove('text-white');
+                navLinks?.classList.add('text-slate-800');
+                navLogo.classList.remove('text-white');
+                navLogo.classList.add('text-slate-800');
+                btnIcon.classList.remove('text-white');
+                btnIcon.classList.add('text-slate-800');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-4');
+                navbar.classList.add('py-6');
+                navLinks?.classList.add('text-white');
+                navLinks?.classList.remove('text-slate-800');
+                navLogo.classList.add('text-white');
+                navLogo.classList.remove('text-slate-800');
+                btnIcon.classList.add('text-white');
+                btnIcon.classList.remove('text-slate-800');
+            }
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
