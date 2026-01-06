@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence Lachaussée | Sophrologue Rambouillet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #F8F9F5;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-soft-sage { background-color: #E2E8DD; }
+        .text-sage { color: #5D6D55; }
+        .border-sage { border-color: #A3B18A; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-lg font-bold tracking-tight text-sage">Florence Lachaussée</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Sophrologue Relaxologue</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#accueil" class="hover:text-sage transition-colors">Accueil</a>
+                <a href="#domaines" class="hover:text-sage transition-colors">Domaines</a>
+                <a href="#contact" class="bg-sage text-white px-5 py-2 rounded-full hover:bg-slate-700 transition-all">Prendre RDV</a>
+            </div>
+            <div class="md:hidden text-sage">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="accueil" class="pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full text-xs font-bold text-sage border border-slate-100 mb-6 shadow-sm">
+                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                    Cabinet & Visio (Skype, Zoom, WhatsApp)
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif text-slate-800 mb-6 leading-tight">
+                    Retrouvez votre <span class="italic text-sage">équilibre</span> intérieur.
+                </h1>
+                <p class="text-lg text-slate-500 mb-10 leading-relaxed font-light">
+                    "Une méthode, une science, une philosophie, pour acquérir un savoir-faire et un savoir-être par ses propres moyens."
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-sage text-white rounded-2xl font-bold shadow-lg shadow-sage/20 hover:scale-105 transition-all">
+                        Prendre rendez-vous
+                    </a>
+                    <div class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl border border-slate-100">
+                        <i data-lucide="phone" class="w-5 h-5 text-sage"></i>
+                        <span class="font-bold">06 08 62 53 92</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative reveal delay-200">
+                <div class="aspect-square bg-soft-sage rounded-[3rem] overflow-hidden rotate-3 relative shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" 
+                         alt="Sophrologie Relaxation" 
+                         class="w-full h-full object-cover -rotate-3 scale-110">
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl hidden sm:block">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center text-sage font-bold">RNCP</div>
+                        <p class="text-[10px] leading-tight text-slate-400 font-bold uppercase tracking-wider">Certifiée au Répertoire<br>National Professionnel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHAMPS D'APPLICATION -->
+    <section id="domaines" class="py-24 bg-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-black text-sage uppercase tracking-[0.3em] mb-4">Champs d'application</h2>
+                <h3 class="text-3xl md:text-4xl font-serif italic text-slate-800">Comment la sophrologie peut vous aider ?</h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <i data-lucide="moon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Troubles du sommeil</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Apprendre à calmer ses pensées le soir pour un endormissement serein.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-100">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                        <i data-lucide="smile"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Confiance en soi</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Développer l'estime de soi et améliorer son image personnelle au quotidien.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-200">
+                    <div class="w-12 h-12 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-500 group-hover:text-white transition-all">
+                        <i data-lucide="baby"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Maternité</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Accompagnement à la grossesse pour un accouchement calme et positif.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Burn-out</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Prévenir l'épuisement professionnel et retrouver l'énergie pour en sortir.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-100">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Concentration</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Améliorer l'attention pour les études, le sport ou les examens/concours.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="p-8 bg-[#FDFCFB] rounded-[2rem] border border-slate-50 hover:border-sage/30 transition-all group reveal delay-200">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Cohérence Cardiaque</h4>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Technique de respiration certifiée pour réduire le stress instantanément.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & INFOS -->
+    <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="bg-sage rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl">
+            <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-serif italic mb-8">Où me trouver ?</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Cabinet Rambouillet</h4>
+                                <p class="text-emerald-50/80">9 bis rue du docteur Bergonier<br>78120 Rambouillet</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="video"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Séances en Visio</h4>
+                                <p class="text-emerald-50/80">Skype, Zoom ou WhatsApp<br>Partout en France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-[2.5rem] text-slate-800">
+                    <h3 class="text-2xl font-serif italic mb-6">Contact direct</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 border-b border-slate-100 pb-4">
+                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-sage">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="font-bold">06 08 62 53 92</span>
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-slate-100 pb-4">
+                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-sage">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-medium break-all">florence.lachaussee@free.fr</span>
+                        </div>
+                    </div>
+                    <button class="w-full mt-10 py-5 bg-sage text-white font-bold rounded-2xl shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                        Envoyer un message <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-slate-100 bg-white px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <p class="font-serif italic text-xl text-sage">Florence Lachaussée</p>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">Sophrologue Rambouillet — Design PoC</p>
+            </div>
+            <div class="text-[11px] text-slate-300 uppercase tracking-widest font-bold">
+                Certifiée RNCP 2012 • 2024
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal effect on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
